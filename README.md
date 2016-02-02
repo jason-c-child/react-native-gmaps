@@ -131,7 +131,7 @@ dependencies {
 ```
 
 #### Step 5 - Register React Package
-
+#### RN < ~0.18
 ```java
 ...
 import com.rota.rngmaps.RNGMapsPackage; // <-- import
@@ -161,6 +161,16 @@ public class MainActivity extends FragmentActivity implements DefaultHardwareBac
 
 ```
 
+##### RN ~0.18
+```java
+...
+  @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(), new RNGMapsPackage()); <--- Register Package here
+    }
+...
+```
 #### Step 6 - Add Google Maps to your Project
 
 Add this to your AndroidManifest file; make sure it goes at the bottom of the `<application>` tag.
